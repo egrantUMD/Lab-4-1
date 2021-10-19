@@ -7,20 +7,18 @@ import cgitb
 
 cgitb.enable()
 
-
 data = cgi.FieldStorage()
 
 s = data.getvalue('slider1')
 p = data.getvalue('PIN') 
 
-data = {"slider1":s, "pin":p}
+data = {"slider1":s, "PIN":p}
 
 with open('led-pwm.txt', 'w') as f:
   json.dump(data,f)
 
 
-
-print('Content-type: text/html\n\n')
+print("Content-type: text/html\n\n")
 print('</head>')
 print('<body>')
 print('<div style="width:600px;background:#FFFFFF;border:1px;text-align:center"> <br>')
